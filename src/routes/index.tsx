@@ -106,7 +106,7 @@ function Hero() {
           <p className="label max-w-xs">Strategist · Founder, The Bombay Digital Company</p>
           <p className="label">Mumbai — Est. a decade in the room</p>
         </div>
-        <h1 className="text-mega font-extrabold uppercase" aria-label="Turning business problems into growth strategies.">
+        <h1 className="text-mega font-extrabold" aria-label="Turning business problems into growth strategies.">
           {lines.map((l, i) => (
             <span key={l.t} className="block overflow-hidden pb-[0.04em]" aria-hidden>
               <motion.span className={`block ${l.c}`} custom={i} variants={words} initial={reduce ? false : "hidden"} animate="show">
@@ -354,7 +354,7 @@ function Contact() {
   const field = "w-full border-b border-ivory/40 bg-transparent py-4 text-lg text-ivory placeholder:text-ivory/50 focus:border-lime focus:outline-none";
   return (
     <section id="contact" className="relative overflow-hidden bg-vermilion px-5 pt-28 md:px-10 md:pt-40">
-      <h2 className="text-mega font-extrabold uppercase">
+      <h2 className="text-mega font-extrabold">
         <MaskLine>Have a</MaskLine>
         <MaskLine delay={0.1} className="text-outline">business</MaskLine>
         <MaskLine delay={0.2}>problem worth</MaskLine>

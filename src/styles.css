@@ -117,7 +117,7 @@
   ::selection { background: var(--lime); color: var(--ink); }
 }
 @utility text-outline { -webkit-text-stroke: 1.5px currentColor; color: transparent; }
-@utility text-mega { font-size: clamp(3.5rem, 13vw, 14rem); }
+@utility text-mega { font-size: clamp(3rem, 10vw, 11rem); }
 @utility text-huge { font-size: clamp(2.75rem, 8vw, 8.5rem); }
 @utility text-big { font-size: clamp(2rem, 5vw, 4.75rem); }
 @utility label { font-family: var(--font-sans); font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase; font-weight: 600; }
