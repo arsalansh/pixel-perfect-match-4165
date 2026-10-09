@@ -64,7 +64,7 @@ function Nav() {
   return (
     <header className="fixed inset-x-0 top-0 z-50 mix-blend-difference text-ivory">
       <div className="flex items-center justify-between px-5 py-5 md:px-10">
-        <a href="#top" className="font-display text-lg font-extrabold tracking-tight">TBDC<span className="text-lime">/</span>Founder</a>
+        <a href="#top" className="font-display text-lg font-bold tracking-tight">TBDC<span className="text-lime">/</span>Founder</a>
         <nav className="hidden gap-8 md:flex">
           {NAV.map(([l, h], i) => (
             <a key={h} href={h} className="label group relative">
@@ -106,7 +106,7 @@ function Hero() {
           <p className="label max-w-xs">Strategist · Founder, The Bombay Digital Company</p>
           <p className="label">Mumbai — Est. a decade in the room</p>
         </div>
-        <h1 className="text-mega font-extrabold" aria-label="Turning business problems into growth strategies.">
+        <h1 className="text-mega font-bold" aria-label="Turning business problems into growth strategies.">
           {lines.map((l, i) => (
             <span key={l.t} className="block overflow-hidden pb-[0.04em]" aria-hidden>
               <motion.span className={`block ${l.c}`} custom={i} variants={words} initial={reduce ? false : "hidden"} animate="show">
@@ -162,7 +162,7 @@ function About() {
         </Reveal>
       </div>
       <Reveal className="mt-28 md:-mr-10 md:ml-[20%]">
-        <p className="text-huge bg-ink px-6 py-10 font-display font-extrabold text-ivory md:px-12">
+        <p className="text-huge bg-ink px-6 py-10 font-display font-bold text-ivory md:px-12">
           Growth starts with <span className="text-lime italic">clarity.</span> Clarity starts <span className="text-outline">here.</span>
         </p>
       </Reveal>
@@ -193,7 +193,7 @@ function Questions() {
             <MaskLine delay={0.1}>with clarity.</MaskLine>
             <MaskLine delay={0.2} className="italic text-vermilion">Clarity starts here.</MaskLine>
           </h2>
-          <p className="font-display mt-12 text-[9rem] font-extrabold leading-none text-cobalt max-md:hidden" aria-hidden>
+          <p className="font-display mt-12 text-[9rem] font-bold leading-none text-cobalt max-md:hidden" aria-hidden>
             0{active + 1}
           </p>
         </div>
@@ -232,7 +232,7 @@ function Expertise() {
     <section id="expertise" className="bg-ivory py-28 md:py-40">
       <div className="px-5 md:px-10">
         <p className="label mb-8 text-cobalt">03 — Expertise</p>
-        <h2 className="text-huge mb-20 max-w-5xl font-extrabold">
+        <h2 className="text-huge mb-20 max-w-5xl font-bold">
           <MaskLine>Where I usually</MaskLine>
           <MaskLine delay={0.1}>enter the <span className="italic text-vermilion">picture.</span></MaskLine>
         </h2>
@@ -241,7 +241,7 @@ function Expertise() {
         {EXPERTISE.map((e, i) => (
           <Reveal key={e.t}>
             <article className={`${e.bg} grid items-start gap-6 border-t border-ink/15 px-5 py-14 md:grid-cols-12 md:px-10 ${i % 2 ? "md:text-right" : ""}`}>
-              <span className={`font-display text-8xl font-extrabold leading-none md:col-span-3 md:text-[10rem] ${e.n} ${i % 2 ? "md:order-3" : ""}`}>0{i + 1}</span>
+              <span className={`font-display text-8xl font-bold leading-none md:col-span-3 md:text-[10rem] ${e.n} ${i % 2 ? "md:order-3" : ""}`}>0{i + 1}</span>
               <h3 className="text-big font-bold md:col-span-5">{e.t}</h3>
               <div className={`space-y-3 text-lg leading-relaxed md:col-span-4 ${i % 2 ? "md:order-first md:text-left" : ""}`}>
                 {e.d.map((p) => <p key={p}>{p}</p>)}
@@ -262,7 +262,7 @@ function Process() {
   return (
     <section id="process" className="bg-ink px-5 py-28 text-ivory md:px-10 md:py-40">
       <div className="mb-16 flex flex-wrap items-end justify-between gap-6">
-        <h2 className="text-huge font-extrabold"><MaskLine>Roadmap</MaskLine><MaskLine delay={0.1} className="text-outline">to success</MaskLine></h2>
+        <h2 className="text-huge font-bold"><MaskLine>Roadmap</MaskLine><MaskLine delay={0.1} className="text-outline">to success</MaskLine></h2>
         <p className="label text-lime">Listen → Audit → Strategize → Execute</p>
       </div>
       <div className="grid gap-3 md:grid-cols-4">
@@ -277,7 +277,7 @@ function Process() {
             style={{ marginTop: `calc(${i} * clamp(0px, 4vw, 5rem))` }}
           >
             <span className="label">Step 0{i + 1} {i < 3 && "→"}</span>
-            <span className="font-display text-4xl font-extrabold md:text-5xl">{s}</span>
+            <span className="font-display text-4xl font-bold md:text-5xl">{s}</span>
           </motion.div>
         ))}
       </div>
@@ -291,7 +291,7 @@ function Performance() {
       <div className="grid md:grid-cols-12">
         <div className="px-5 py-28 md:col-span-6 md:px-10 md:py-40">
           <p className="label mb-8">04 — TBDC</p>
-          <h2 className="text-huge font-extrabold">
+          <h2 className="text-huge font-bold">
             <MaskLine>Performance,</MaskLine>
             <MaskLine delay={0.1} className="italic text-cobalt">not promises.</MaskLine>
           </h2>
@@ -309,7 +309,7 @@ function Performance() {
         >
           <img src={executionImg} alt="The TBDC team at work in the studio" loading="lazy" width={1600} height={1008} className="absolute inset-0 h-full w-full object-cover" />
           <div className="absolute bottom-0 left-0 bg-vermilion px-6 py-5 md:-left-0">
-            <span className="font-display text-6xl font-extrabold md:text-8xl">100+</span>
+            <span className="font-display text-6xl font-bold md:text-8xl">100+</span>
             <span className="label block">Brands</span>
           </div>
         </motion.div>
@@ -325,7 +325,7 @@ function Notes() {
   return (
     <section id="notes" className="bg-ivory px-5 py-28 md:px-10 md:py-40">
       <div className="mb-16 flex items-end justify-between">
-        <h2 className="text-huge font-extrabold"><MaskLine>Notes on</MaskLine><MaskLine delay={0.1} className="italic text-vermilion">growth.</MaskLine></h2>
+        <h2 className="text-huge font-bold"><MaskLine>Notes on</MaskLine><MaskLine delay={0.1} className="italic text-vermilion">growth.</MaskLine></h2>
         <p className="label max-md:hidden">05 — Editorial</p>
       </div>
       <ul>
@@ -354,7 +354,7 @@ function Contact() {
   const field = "w-full border-b border-ivory/40 bg-transparent py-4 text-lg text-ivory placeholder:text-ivory/50 focus:border-lime focus:outline-none";
   return (
     <section id="contact" className="relative overflow-hidden bg-vermilion px-5 pt-28 md:px-10 md:pt-40">
-      <h2 className="text-mega font-extrabold">
+      <h2 className="text-mega font-bold">
         <MaskLine>Have a</MaskLine>
         <MaskLine delay={0.1} className="text-outline">business</MaskLine>
         <MaskLine delay={0.2}>problem worth</MaskLine>
