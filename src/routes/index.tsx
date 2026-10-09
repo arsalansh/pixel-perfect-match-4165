@@ -151,8 +151,8 @@ function About() {
             <p className="font-semibold">So my advice doesn't stay on paper. It's shaped by years of building the teams that make growth happen.</p>
           </Reveal>
         </div>
-        <Reveal delay={0.2} className="relative self-start lg:col-span-5">
-          <div className="absolute -left-6 -top-6 h-2/3 w-2/3 bg-lime" />
+        <Reveal delay={0.2} className="relative mx-auto w-full max-w-sm self-start sm:max-w-md lg:col-span-5 lg:max-w-none">
+          <div className="absolute -left-4 -top-4 h-2/3 w-2/3 bg-lime" />
           <div className="absolute -bottom-6 -right-3 h-1/3 w-1/2 bg-vermilion lg:-right-6" />
           {/* Replace with the founder's real portrait */}
           <div className="relative flex aspect-[4/5] items-end bg-ink p-6 text-ivory">
