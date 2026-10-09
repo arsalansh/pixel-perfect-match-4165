@@ -387,7 +387,7 @@ function Expertise() {
           </h2>
           <p className="label text-ivory/60 max-lg:hidden">Keep scrolling →</p>
         </div>
-        <motion.div style={reduce ? undefined : { x }} className="flex gap-6 px-5 max-lg:flex-col lg:w-max lg:px-10">
+        <motion.div style={reduce ? {} : { x }} className="flex gap-6 px-5 max-lg:flex-col lg:w-max lg:px-10">
           {EXPERTISE.map((e, i) => (
             <article
               key={e.t}
@@ -520,8 +520,8 @@ function Notes() {
         transition={{ duration: 0.25 }}
       >
         {hover !== null && (
-          <div className={`-translate-x-1/2 -translate-y-1/2 rotate-6 ${NOTES[hover].c} p-3`}>
-            <img src={NOTES[hover].img} alt="" className="h-44 w-44 object-contain" />
+          <div className={`-translate-x-1/2 -translate-y-1/2 rotate-6 ${NOTES[hover]?.c} p-3`}>
+            <img src={NOTES[hover]?.img} alt="" className="h-44 w-44 object-contain" />
           </div>
         )}
       </motion.div>
