@@ -66,6 +66,7 @@
   --color-lime: var(--lime);
   --font-display: "Syne", sans-serif;
   --font-sans: "Manrope", sans-serif;
+  --font-serif: "Instrument Serif", serif;
 }
 
 :root {
@@ -125,3 +126,9 @@
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; } }
 @keyframes marquee { to { transform: translateX(-50%); } }
 @utility marquee { animation: marquee 30s linear infinite; }
+@utility tape { background: color-mix(in oklab, var(--lime) 85%, transparent); box-shadow: 0 2px 0 color-mix(in oklab, var(--ink) 15%, transparent); }
+@utility paper { background-color: var(--ivory); background-image: radial-gradient(color-mix(in oklab, var(--ink) 7%, transparent) 1px, transparent 1px); background-size: 6px 6px; }
+@utility cutout { filter: drop-shadow(8px 10px 0 color-mix(in oklab, var(--ink) 90%, transparent)); }
+@utility halftone-tint { mix-blend-mode: multiply; }
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@utility spin-slow { animation: spin-slow 18s linear infinite; }
