@@ -62,7 +62,7 @@ const NAV = [
 function Nav() {
   const [open, setOpen] = useState(false);
   return (
-    <header className="fixed inset-x-0 top-0 z-50 mix-blend-difference text-ivory">
+    <header className="fixed inset-x-0 top-0 z-50 bg-ink text-ivory">
       <div className="flex items-center justify-between px-5 py-5 md:px-10">
         <a href="#top" className="font-display text-lg font-bold tracking-tight">TBDC<span className="text-lime">/</span>Founder</a>
         <nav className="hidden gap-8 md:flex">
