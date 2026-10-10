@@ -171,19 +171,14 @@ function Nav() {
 function KineticWord({ word, className, delay }: { word: string; className: string; delay: number }) {
   const reduce = useReducedMotion();
   return (
-    <span className={`inline-flex overflow-hidden pb-[0.08em] ${className}`}>
-      {word.split("").map((ch, i) => (
-        <motion.span
-          key={i}
-          className="inline-block transition-transform duration-300 hover:-translate-y-[0.12em] hover:text-vermilion"
-          initial={reduce ? false : { y: "115%", rotate: 12 }}
-          animate={{ y: "0%", rotate: 0 }}
-          transition={{ duration: 0.9, ease, delay: delay + i * 0.035 }}
-        >
-          {ch}
-        </motion.span>
-      ))}
-    </span>
+    <motion.span
+      className={`inline-block ${className}`}
+      initial={reduce ? false : { opacity: 0, y: "0.25em" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease, delay }}
+    >
+      {word}
+    </motion.span>
   );
 }
 
