@@ -171,19 +171,14 @@ function Nav() {
 function KineticWord({ word, className, delay }: { word: string; className: string; delay: number }) {
   const reduce = useReducedMotion();
   return (
-    <span className={`inline-flex overflow-hidden pb-[0.08em] ${className}`}>
-      {word.split("").map((ch, i) => (
-        <motion.span
-          key={i}
-          className="inline-block transition-transform duration-300 hover:-translate-y-[0.12em] hover:text-vermilion"
-          initial={reduce ? false : { y: "115%", rotate: 12 }}
-          animate={{ y: "0%", rotate: 0 }}
-          transition={{ duration: 0.9, ease, delay: delay + i * 0.035 }}
-        >
-          {ch}
-        </motion.span>
-      ))}
-    </span>
+    <motion.span
+      className={`inline-block ${className}`}
+      initial={reduce ? false : { opacity: 0, y: "0.25em" }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease, delay }}
+    >
+      {word}
+    </motion.span>
   );
 }
 
@@ -192,17 +187,16 @@ function Hero() {
   const ref = useRef<HTMLElement>(null);
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const knightY = useTransform(scrollYProgress, [0, 1], [0, -160]);
-  const textX = useTransform(scrollYProgress, [0, 1], [0, -200]);
   return (
     <section ref={ref} id="top" onMouseMove={onMove} className="paper relative min-h-[100svh] overflow-hidden pt-24 lg:pt-28">
       {/* collage background shapes */}
-      <Par mx={sx} my={sy} depth={-30} className="absolute -right-24 top-16 h-[70%] w-[46%] max-lg:hidden">
+      <Par mx={sx} my={sy} depth={-30} className="absolute -right-24 bottom-0 h-[58%] w-[40%] max-lg:hidden">
         <div className="h-full w-full bg-cobalt" style={{ clipPath: "polygon(8% 0, 100% 0, 100% 100%, 0 92%)" }} />
       </Par>
-      <Par mx={sx} my={sy} depth={50} className="absolute left-[46%] top-[58%] max-lg:hidden">
+      <Par mx={sx} my={sy} depth={50} className="absolute bottom-16 left-[52%] max-lg:hidden">
         <div className="h-40 w-40 rounded-full bg-vermilion" />
       </Par>
-      <motion.div style={{ y: knightY }} className="pointer-events-none absolute bottom-0 right-[4%] w-[44vw] max-w-[560px] lg:w-[30vw]">
+      <motion.div style={{ y: knightY }} className="pointer-events-none absolute bottom-0 right-[2%] w-[38vw] max-w-[520px] opacity-30 sm:opacity-100 lg:w-[28vw]">
         <Par mx={sx} my={sy} depth={-60}>
           <motion.img
             src={knightImg}
@@ -216,23 +210,23 @@ function Hero() {
           />
         </Par>
       </motion.div>
-      <Par mx={sx} my={sy} depth={40} className="absolute right-[30%] top-28 w-28 text-ink lg:w-40">
+      <Par mx={sx} my={sy} depth={40} className="absolute right-4 top-24 w-20 text-ink sm:w-28 lg:right-[34%] lg:top-auto lg:bottom-20 lg:w-36">
         <Pop delay={1.2}><Sticker text="Strategy · Clarity · Growth · " className="bg-lime" /></Pop>
       </Par>
-      <div className="tape absolute left-[8%] top-[22%] h-8 w-40 -rotate-6 max-lg:hidden" />
+      <div className="tape absolute left-[60%] top-[14%] h-8 w-40 -rotate-6 max-lg:hidden" />
 
-      <div className="relative px-5 lg:px-10">
-        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="label mb-6 flex items-center gap-3">
+      <div className="relative z-10 mx-auto max-w-[1600px] px-5 lg:px-10">
+        <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.2 }} className="label mb-6 flex max-w-[70%] items-start gap-3 sm:max-w-none sm:items-center">
           <span className="inline-block h-2 w-2 rounded-full bg-vermilion" /> Issue 01 · Strategist & Founder, The Bombay Digital Company
         </motion.p>
-        <h1 aria-label="Turning business problems into growth strategies." className="relative text-[clamp(3rem,10.5vw,12rem)] leading-[0.86]">
+        <h1 aria-label="Turning business problems into growth strategies." className="relative text-[clamp(2.6rem,10vw,11rem)] leading-[0.92] break-words">
           <span aria-hidden className="block">
             <KineticWord word="Turning" className="font-display font-bold" delay={0.1} />{" "}
             <KineticWord word="business" className="font-serif italic text-cobalt" delay={0.3} />
           </span>
-          <motion.span aria-hidden style={{ x: textX }} className="block whitespace-nowrap">
+          <span aria-hidden className="block">
             <KineticWord word="problems" className="font-display font-bold text-outline" delay={0.5} />
-          </motion.span>
+          </span>
           <span aria-hidden className="block lg:pl-[10vw]">
             <KineticWord word="into" className="font-serif italic" delay={0.7} />{" "}
             <span className="relative inline-block">
