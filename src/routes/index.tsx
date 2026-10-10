@@ -190,7 +190,7 @@ function Hero() {
   return (
     <section ref={ref} id="top" onMouseMove={onMove} className="paper relative min-h-[100svh] overflow-hidden pt-24 lg:pt-28">
       {/* collage background shapes */}
-      <Par mx={sx} my={sy} depth={-30} className="absolute -right-24 top-16 h-[70%] w-[46%] max-lg:hidden">
+      <Par mx={sx} my={sy} depth={-30} className="absolute -right-24 bottom-0 h-[58%] w-[40%] max-lg:hidden">
         <div className="h-full w-full bg-cobalt" style={{ clipPath: "polygon(8% 0, 100% 0, 100% 100%, 0 92%)" }} />
       </Par>
       <Par mx={sx} my={sy} depth={50} className="absolute bottom-16 left-[52%] max-lg:hidden">
